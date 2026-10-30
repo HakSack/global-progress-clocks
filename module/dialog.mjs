@@ -1,8 +1,8 @@
 import { MODULE_ID} from "./values.mjs";
 
 const CLOCK_MAX_SIZE = 32;
-const CLOCK_SIZES = [2, 3, 4, 5, 6, 8, 10, 12];
-const TRACKER_SIZES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const CLOCK_SIZES = [2, 3, 4, 5, 6, 8, 10, 12, 16, 20];
+const TRACKER_SIZES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16, 20];
 
 const fapi = foundry.applications.api;
 
@@ -82,7 +82,7 @@ export class ClockAddDialog extends fapi.HandlebarsApplicationMixin(fapi.Applica
         const data = formData.object;
         data.type ??= this.type;
         data.max =
-            this.type === "points" ? 99 : this.type === "tracker" ? Math.min(data.max, 12) : Math.max(data.max, 1);
+            this.type === "points" ? 99 : this.type === "tracker" ? Math.min(data.max, 20) : Math.max(data.max, 1);
         if (this.entry) {
             data.id = this.entry.id;
             data.value = Math.clamp(data.value, 0, data.max);
