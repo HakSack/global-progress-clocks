@@ -20,7 +20,7 @@
                 <label>{{localize "GlobalProgressClocks.CreateDialog.Size"}}</label>
                 <div class="form-fields">
                     <div class="dropdown-wrapper">
-                        {{ numberInput defaultSize name="max" step=1 min=1 max=12 }}
+                        {{ numberInput defaultSize name="max" step=1 min=1 max=20 }}
                         <ul class="dropdown">
                             {{#each trackerSizes as |size|}}
                                 <li data-value={{size}}>{{size}}</li>
